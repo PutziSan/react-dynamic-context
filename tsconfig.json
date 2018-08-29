@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "es6",
+
+    "jsx": "preserve",
+
+    "lib": ["es6", "dom"],
+
+    "allowJs": true,
+
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true
+  },
+  "exclude": [".git", "node_modules"]
+}

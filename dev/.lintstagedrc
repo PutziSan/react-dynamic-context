@@ -1,0 +1,11 @@
+{
+  "*.{ts,tsx}": [
+    "tslint --project tsconfig.json --force --fix",
+    "prettier --write",
+    "git add"
+  ],
+  "*.{js,jsx,json,css,md}": [
+    "prettier --write",
+    "git add"
+  ]
+}
