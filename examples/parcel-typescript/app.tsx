@@ -2,10 +2,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import {
+  ContextValueState,
   createDynamicContext,
   DynamicProvider
-} from '../../src/DynamicContext';
-import { ContextValueState } from '../../src/types';
+} from '../../src';
 
 const SomeContext = createDynamicContext<{ foo: string; bar: string }>({
   foo: 'current-foo-value',

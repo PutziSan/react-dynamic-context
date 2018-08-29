@@ -1,6 +1,16 @@
 # react-dynamic-context
 
+> This Documentation is currently under construction
+
 Type-safe dynamic context with only a few lines of code.
+
+## install
+
+```shell
+yarn add react-dynamic-context
+# or with
+npm i react-dynamic-context
+```
 
 ## basic example
 
@@ -25,6 +35,11 @@ const App = () => (
   </DynamicProvider>
 );
 ```
+
+live-examples on codesandbox:
+
+- [TypeScript-example](https://codesandbox.io/s/8z6zwjyw7l)
+- [JS-example](https://codesandbox.io/s/24ry9jwvlj)
 
 ### advanced example
 
