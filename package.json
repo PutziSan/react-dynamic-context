@@ -2,7 +2,7 @@
   "name": "react-dynamic-context",
   "sideEffects": false,
   "description": "Type-safe dynamic context with only a few lines of code.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "author": "Putzi San <putzisan@putzisan.de>",
   "repository": "PutziSan/react-dynamic-context",
@@ -21,7 +21,7 @@
   ],
   "scripts": {
     "build": "rimraf dist && yarn build:declarations && cross-env NODE_ENV=production rollup -c rollup.config.js",
-    "build:declarations": "tsc --declarationDir dist/types --declaration --emitDeclarationOnly --allowJs false",
+    "build:declarations": "tsc -p ./dev/tsconfig.declarations.json  --declarationDir dist/types --declaration --emitDeclarationOnly --allowJs false",
     "test": "cross-env NODE_ENV=test jest"
   },
   "peerDependencies": {
