@@ -8,18 +8,18 @@ Type-safe dynamic context with only a few lines of code.
 
 ```shell
 yarn add react-dynamic-context
-# or with
+# or
 npm i react-dynamic-context
 ```
 
 ## basic example
 
-```typescript
+```tsx
 import * as React from 'react';
 import { createDynamicContext, DynamicProvider } from 'react-dynamic-context';
 
 const SomeContext = createDynamicContext<{ foo: string }>({
-  foo: 'bar'
+  foo: 'default-value'
 });
 
 const App = () => (
@@ -43,7 +43,7 @@ live-examples on codesandbox:
 
 ### advanced example
 
-```typescript
+```tsx
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { createDynamicContext, DynamicProvider } from 'react-dynamic-context';
