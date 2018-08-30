@@ -11,7 +11,7 @@ import {
 let providers: React.ComponentType[] = [];
 const powerProviders: DynamicProvider[] = [];
 
-const pushProvider = (Provider: React.ComponentType) => {
+export const pushProvider = (Provider: React.ComponentType) => {
   // providers = [...providers, Provider]; // spread-syntax is not used to avoid the babel-polyfill (saves ~0.12 KB minified + gzipped).
   providers = providers.slice();
   providers.push(Provider);
