@@ -48,7 +48,7 @@ export class DynamicProvider extends React.PureComponent<
   }
 }
 
-export function createDynamicContext<Values>(
+export function createDynamicContext<Values extends Required<Values>>(
   defaultValues: ContextValues<Values>,
   { addToDynamicProvider = true }: CreateDynamicContextOptions = {}
 ) {

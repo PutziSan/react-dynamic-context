@@ -16,7 +16,7 @@ export interface ContextValueState<Value> {
   handleInputChange: HandleInputChange;
 }
 
-export type ContextStore<Values> = {
+export type ContextStore<Values extends Required<Values>> = {
   [K in keyof Values]: ContextValueState<Values[K]>
 };
 
