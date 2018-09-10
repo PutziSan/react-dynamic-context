@@ -2,7 +2,7 @@
   "name": "react-dynamic-context",
   "sideEffects": false,
   "description": "Type-safe dynamic context with only a few lines of code.",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "license": "MIT",
   "author": "Putzi San <putzisan@putzisan.de>",
   "repository": "PutziSan/react-dynamic-context",
