@@ -41,6 +41,22 @@ live-examples on codesandbox:
 - [TypeScript-example](https://codesandbox.io/s/8z6zwjyw7l)
 - [JS-example](https://codesandbox.io/s/24ry9jwvlj)
 
+## optional values for context-value-interface
+
+The interface must not contain any optional values:
+
+```typescript
+import { createDynamicContext } from 'react-dynamic-context';
+
+// ERROR: Type '{ foo?: string | undefined; }' does not satisfy the constraint 'Required<{ foo?: string | undefined; }>'.
+createDynamicContext<{ foo?: string }>({});
+
+// CORRECT:
+createDynamicContext<{ foo: string | undefined }>({ foo: undefined });
+```
+
+## further reading
+
 ### advanced example
 
 ```tsx

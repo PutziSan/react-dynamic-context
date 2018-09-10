@@ -30,7 +30,7 @@ export type CalcValueStateMap<Values> = {
   [K in keyof Values]: CalcValueState<Values[K]>
 };
 
-export type ContextValues<Values> = { [K in keyof Values]: Values[K] };
+export type ContextValues<Values> = { [K in keyof Values]-?: Values[K] };
 
 export interface CreateDynamicContextOptions {
   addToDynamicProvider?: boolean;

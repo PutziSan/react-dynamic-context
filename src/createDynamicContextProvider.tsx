@@ -8,7 +8,7 @@ import {
   SetterMap
 } from './types';
 
-export function createDynamicContextProvider<Values>(
+export function createDynamicContextProvider<Values extends Required<Values>>(
   defaultValues: ContextValues<Values>,
   newContext: React.Context<ContextStore<Values>>
 ) {

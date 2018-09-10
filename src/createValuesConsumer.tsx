@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ContextStore, ContextValues } from './types';
 
-export function createValuesConsumer<Values>(
+export function createValuesConsumer<Values extends Required<Values>>(
   defaultValues: ContextValues<Values>,
   newContext: React.Context<ContextStore<Values>>
 ) {

@@ -7,7 +7,9 @@ const defaultSetValue = (key: string) => (value: any) => {
   throw new Error(errorText);
 };
 
-export function toDefaultStore<Values>(defaultValues: Values) {
+export function toDefaultStore<Values extends Required<Values>>(
+  defaultValues: Values
+) {
   const res = {} as ContextStore<Values>;
 
   const keys = Object.keys(defaultValues) as (keyof Values)[];
