@@ -14,15 +14,22 @@ export function createDynamicContextProvider<Values extends Required<Values>>(
 ) {
   const valueKeys = Object.keys(defaultValues) as (keyof Values)[];
 
-  return class DynamicContextProvider extends React.PureComponent<{}> {
+  type DynamicContextProviderProps = {
+    initialValues?: Partial<ContextValues<Values>>;
+  };
+
+  return class DynamicContextProvider extends React.PureComponent<
+    DynamicContextProviderProps,
+    ContextValues<Values>
+  > {
     setterMap: SetterMap<Values>;
     handleInputChangeMap: HandleInputChangeMap<Values>;
     memoizedValueStateGetters: CalcValueStateMap<Values>;
 
-    state = defaultValues;
-
-    constructor(props: {}) {
+    constructor(props: DynamicContextProviderProps) {
       super(props);
+
+      this.state = Object.assign({}, defaultValues, props.initialValues);
 
       this.setterMap = this.calcSetterMap();
       this.handleInputChangeMap = this.calcHandleInputChangeMap();
@@ -32,7 +39,8 @@ export function createDynamicContextProvider<Values extends Required<Values>>(
     calcSetterMap() {
       const res = {} as SetterMap<Values>;
       valueKeys.forEach(
-        key => (res[key] = newValue => this.setState({ [key]: newValue }))
+        key =>
+          (res[key] = (newValue: any) => this.setState({ [key]: newValue }))
       );
       return res;
     }
@@ -42,7 +50,7 @@ export function createDynamicContextProvider<Values extends Required<Values>>(
       valueKeys.forEach(
         key =>
           (res[key] = (e: React.ChangeEvent<HTMLInputElement>) =>
-            this.setState({ [key]: e.target.value }))
+            this.setState({ [key]: e.target.value as any }))
       );
       return res;
     }
