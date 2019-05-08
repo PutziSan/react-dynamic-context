@@ -64,5 +64,10 @@ export function createDynamicContext<Values extends Required<Values>>(
 
   const ValuesConsumer = createValuesConsumer(defaultValues, newContext);
 
-  return { Provider, Consumer: newContext.Consumer, ValuesConsumer };
+  return {
+    Provider,
+    Consumer: newContext.Consumer,
+    ValuesConsumer,
+    context: newContext
+  };
 }
